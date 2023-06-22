@@ -14,9 +14,12 @@ public class Cat {
 
     private String name;
 
-    public Cat(Long id, String name) {
-        this.id = id;
+    public Cat(String name) {
         this.name = name;
+    }
+
+    public Cat() {
+
     }
 
     @Override
