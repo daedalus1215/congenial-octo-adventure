@@ -10,4 +10,8 @@ public class AccountService {
     }
 
 
+    public Account getUserAccounts() {
+        return Account.builder()
+                .build();
+    }
 }
