@@ -20,14 +20,7 @@ public class Account {
         accountNumber = builder.accountNumber;
     }
 
-    public static Builder newBuilder() {
-        return new Builder("user",
-                AccountNumber.builder().build()
-        );
-    }
-
-
-    public static final class Builder {
+    public final class Builder {
         private String user;
         private AccountNumber accountNumber;
 
