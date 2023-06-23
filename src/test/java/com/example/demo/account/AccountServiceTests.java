@@ -1,6 +1,5 @@
 package com.example.demo.account;
 
-import com.example.demo.account.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,6 +29,7 @@ public class AccountServiceTests {
     @Test
     public void getUserAccountsReturnsSingleAccount() throws Exception {
         given(this.accountRepository.findAccountsByUsername("user"))
-                .willReturn(Collections.singletonList(new Account("user", new AccountNumber("123435"))));
+                .willReturn(Collections.singletonList(Account.newBuilder()
+                        .build()));
     }
 }
