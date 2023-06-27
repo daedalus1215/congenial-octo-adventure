@@ -1,46 +1,34 @@
 package com.example.demo.account;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Builder
+import java.io.Serializable;
+import java.util.Objects;
+
+@NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
-public class Account {
-    private final String user;
-    private final AccountNumber accountNumber;
+public class Account implements Serializable {
 
-    public Account(String user, AccountNumber accountNumber, String user1, AccountNumber accountNumber1) {
-        this.user = user1;
-        this.accountNumber = accountNumber1;
+    private Integer id;
+
+    private String user;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return Objects.equals(id, account.id) && Objects.equals(user, account.user);
     }
 
-    private Account(Builder builder) {
-        user = builder.user;
-        accountNumber = builder.accountNumber;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, user);
     }
 
-    public final class Builder {
-        private String user;
-        private AccountNumber accountNumber;
-
-        public Builder(String user, AccountNumber accountNumber) {
-            this.user = user;
-            this.accountNumber = accountNumber;
-        }
-
-        public Account build() {
-            return new Account(this);
-        }
-
-        public Builder withUser(String user) {
-            this.user = user;
-            return this;
-        }
-
-        public Builder withAccountNumber(AccountNumber accountNumber) {
-            this.accountNumber = accountNumber;
-            return this;
-        }
-    }
 }

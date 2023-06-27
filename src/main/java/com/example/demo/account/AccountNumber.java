@@ -1,14 +1,20 @@
 package com.example.demo.account;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class AccountNumber {
-    private final String number;
+    @Id
+    private Long id;
 
-    public AccountNumber(String number) {
-        this.number = number;
-    }
+    private String number;
 
     private AccountNumber(Builder builder) {
         number = builder.number;
@@ -16,6 +22,14 @@ public class AccountNumber {
 
     public String getNumber() {
         return number;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
 
