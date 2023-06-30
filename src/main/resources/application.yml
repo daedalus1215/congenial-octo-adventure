@@ -1,8 +1,22 @@
+“spring:
+  profiles:
+    active: development
+---
 spring:
   profiles: development
   jpa:
+    show_sql: false
     database: MYSQL
+    generate-ddl: true
   datasource:
-    url: jdbc:mysql://localhost/test
+    url: jdbc:mysql://localhost/dev
     username: dbuser
     password: dbpass
+---
+spring:
+  profiles: test
+  jpa:
+    show_sql: false
+    database: h2
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
