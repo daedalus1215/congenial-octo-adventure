@@ -1,4 +1,4 @@
-package com.example.demo.account;
+package com.example.demo.account.entity.account;
 
 import com.example.demo.shared.entity.BaseEntity;
 import jakarta.persistence.*;

@@ -1,9 +1,10 @@
-“spring:
-  profiles:
-    active: development
+spring:
+  config:
+    activate:
+      on-profile:
+        active: development
 ---
 spring:
-  profiles: development
   jpa:
     show_sql: false
     database: MYSQL
@@ -12,11 +13,16 @@ spring:
     url: jdbc:mysql://localhost/dev
     username: dbuser
     password: dbpass
+  config:
+    activate:
+      on-profile: development
 ---
 spring:
-  profiles: test
   jpa:
     show_sql: false
     database: h2
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
+  config:
+    activate:
+      on-profile: test

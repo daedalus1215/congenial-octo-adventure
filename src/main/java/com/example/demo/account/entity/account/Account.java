@@ -1,4 +1,4 @@
-package com.example.demo.account;
+package com.example.demo.account.entity.account;
 
 import com.example.demo.shared.entity.BaseEntity;
 import jakarta.persistence.*;
@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Aggregate Entity
+ */
 @Entity
 @Data
 @NoArgsConstructor

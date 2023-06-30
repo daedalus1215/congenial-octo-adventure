@@ -1,11 +1,15 @@
-package com.example.demo.account;
+package com.example.demo.account.entity;
 
+import com.example.demo.account.entity.account.Account;
 import com.example.demo.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Aggregate Entity
+ */
 @Entity
 @Data
 @NoArgsConstructor
@@ -28,5 +32,12 @@ public class Customer extends BaseEntity {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public Customer(String firstName, String lastName, String email, Account account) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.account = account;
     }
 }
